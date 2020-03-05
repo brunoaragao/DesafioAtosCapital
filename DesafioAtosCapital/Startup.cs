@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DesafioAtosCapital.Data;
+using DesafioAtosCapital.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,9 @@ namespace DesafioAtosCapital
             services.AddControllersWithViews();
 
             services.AddDbContext<dbAtosCapitalContext>(option =>
-            option.UseSqlServer(Configuration.GetConnectionString("dbAtosCapital")));
+                option.UseSqlServer(Configuration.GetConnectionString("dbAtosCapital")));
+
+            services.AddScoped<VwPagamentosCartaoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

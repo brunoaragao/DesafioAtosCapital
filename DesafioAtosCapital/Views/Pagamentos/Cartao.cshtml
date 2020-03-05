@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DesafioAtosCapital.Models.VwPagamentosCartao>
+
+@{
+    ViewData["Title"] = "Pagamentos no Cartão";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NrCnpj)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NrNsu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DtVenda)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CdBandeira)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DsBandeira)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VlVenda)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QtParcelas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CdErp)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.NrCnpj
+                    </th>
+                    <th>
+                        @item.NrNsu
+                    </th>
+                    <th>
+                        @item.DtVenda
+                    </th>
+                    <th>
+                        @item.CdBandeira
+                    </th>
+                    <th>
+                        @item.DsBandeira
+                    </th>
+                    <th>
+                        @item.VlVenda
+                    </th>
+                    <th>
+                        @item.QtParcelas
+                    </th>
+                    <th>
+                        @item.CdErp
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

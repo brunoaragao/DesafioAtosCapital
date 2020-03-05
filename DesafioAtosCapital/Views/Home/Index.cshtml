@@ -1,3 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+<div class="row">
+    <div class="col-md-8 col-lg-8">
+        <div class="list-group">
+
+            <a class="list-group-item list-group-item-action flex-column align-items-start px-4" asp-area="" asp-controller="Pagamentos" asp-action="Cartao">
+                <h2 class="mb-2">Pagamentos Cartão</h2>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Objetivo</th>
+                            <td>Criação de uma View no Banco de Dados com o nome VW_Pagamentos_Cartao, que permite somente pagamentos de Cartão de Crédito e Débito</td>
+                        </tr>
+                        <tr>
+                            <th>Implementação</th>
+                            <td>Página com que lista todos os pagamentos no cartão, usando a View criada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </a>
+
+        </div>
+    </div>
+</div>
