@@ -1,0 +1,83 @@
+﻿@model DesafioAtosCapital.Models.ViewModels.FormularioCorrecaoParcelasViewModel
+
+@{
+    ViewData["Title"] = "Correção de Parcelas";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CorrecaoParcelas">
+            <div class="form-group">
+                <label asp-for="IdPagamentoVenda" class="control-label"></label>
+                <input asp-for="IdPagamentoVenda" class="form-control" />
+                <span asp-validation-for="IdPagamentoVenda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtParcelas" class="control-label"></label>
+                <input asp-for="QtParcelas" class="form-control" />
+                <span asp-validation-for="QtParcelas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrTaxaAdministracao" class="control-label"></label>
+                <input asp-for="PrTaxaAdministracao" class="form-control" />
+                <span asp-validation-for="PrTaxaAdministracao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Corrigir" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    @if (Model != null)
+    {
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(x => Model.Parcelas.FirstOrDefault().NrParcela)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(x => Model.Parcelas.FirstOrDefault().VlTaxaAdministracao)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(x => Model.Parcelas.FirstOrDefault().VlParcela)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (TbParcela parcela in Model.Parcelas)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(x => parcela.NrParcela)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(x => parcela.VlTaxaAdministracao)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(x => parcela.VlParcela)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    <a class="btn btn-link" asp-action="Index">Voltar para Pagamentos Cartão</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -380,7 +380,7 @@ S - Saída");
 
                 entity.Property(e => e.VlVenda)
                     .HasColumnName("vlVenda")
-                    .HasColumnType("numeric(9, 2)");
+                    .HasMaxLength(4000);
             });
 
             OnModelCreatingPartial(modelBuilder);

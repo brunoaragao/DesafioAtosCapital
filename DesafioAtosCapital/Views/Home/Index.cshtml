@@ -6,21 +6,58 @@
     <div class="col-md-8 col-lg-8">
         <div class="list-group">
 
-            <a class="list-group-item list-group-item-action flex-column align-items-start px-4" asp-area="" asp-controller="Pagamentos" asp-action="Cartao">
-                <h2 class="mb-2">Pagamentos Cartão</h2>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>Objetivo</th>
-                            <td>Criação de uma View no Banco de Dados com o nome VW_Pagamentos_Cartao, que permite somente pagamentos de Cartão de Crédito e Débito</td>
-                        </tr>
-                        <tr>
-                            <th>Implementação</th>
-                            <td>Página com que lista todos os pagamentos no cartão, usando a View criada</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </a>
+
+            <div class="card mb-2">
+                <div class="card-header">
+                    Desafio 1
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Pagamentos Cartão
+                    </h5>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Objetivo</th>
+                                <td>Criação de uma View no Banco de Dados com o nome VW_Pagamentos_Cartao, que exibe somente pagamentos de Cartão de Crédito e Débito</td>
+                            </tr>
+                            <tr>
+                                <th>Implementação</th>
+                                <td>Página com que lista todos os pagamentos no cartão, usando a View criada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Pagamentos" asp-action="Cartao">
+                        Pagamentos Cartão
+                    </a>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="card-header">
+                    Desafio 2
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Correção de Parcelas
+                    </h5>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Objetivo</th>
+                                <td>Criação de uma Stored Procedure no Banco de Dados com o nome SP_Corrige_Parcelas, que altera o valor da Quantidade de Parcelas e/ou a Taxa de Adiministração</td>
+                            </tr>
+                            <tr>
+                                <th>Implementação</th>
+                                <td>Página de formulário, que envia os dados para para uma função que executa o Stored Procedure com os parámetros do formulário</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Pagamentos" asp-action="CorrecaoParcelas">
+                        Correção de Parcelas
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
